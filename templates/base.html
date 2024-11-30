@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Remover</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Additional custom styling */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(90deg, #4f46e5, #3b82f6);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="gradient-bg text-white shadow-md py-4">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+            <h1 class="text-lg font-bold">Background Remover</h1>
+            <a href="https://github.com" target="_blank" class="text-sm hover:underline">GitHub</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 text-gray-500 text-sm">
+        © {{ current_year }} Background Remover. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
+    <h1 class="text-3xl font-semibold mb-6 text-center text-gray-700">Remove Image Background</h1>
+    <p class="text-sm text-gray-600 text-center mb-6">
+        Upload an image and get a transparent version instantly!
+    </p>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="mb-4">
+        {% for message in messages %}
+        <li class="text-red-500">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Drag and drop area -->
+    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+        <p class="text-gray-500">Drag and drop your image here</p>
+        <p class="text-gray-400 text-sm">or</p>
+        <label for="file-upload" class="bg-blue-500 hover:bg-blue-600 text-white text-sm font-bold py-2 px-4 rounded cursor-pointer">
+            Browse Files
+        </label>
+        <input type="file" id="file-upload" name="file" class="hidden" />
+    </div>
+
+    <!-- Submit button -->
+    <form action="/" method="POST" enctype="multipart/form-data" class="mt-6">
+        <div class="mb-4">
+            <input type="file" name="file" id="file" class="hidden">
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
+            Remove Background
+        </button>
+    </form>
+</div>
+{% endblock %}
